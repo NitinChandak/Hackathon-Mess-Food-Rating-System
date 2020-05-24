@@ -1,0 +1,265 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static' , filename='css/navbarcss.css') }}">
+<link rel="stylesheet" href="{{ url_for('static' , filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/elegant-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/main.css') }}">
+    <link rel="text/css" href="{{ url_for('static' , filename='css/navbarcss.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<div class="navbar224">
+<ul>
+  <li><a href="{{ url_for('static' , filename='images/north.pdf') }}">North Mess Menu</a></li>
+  <li><a href="{{ url_for('static' , filename='images/south.pdf') }}">South Mess Menu</a></li>
+  <li><a href="{{ url_for('static' , filename='images/kadambveg.pdf') }}">Kadamb Mess Veg Menu</a></li>
+  <li><a href="{{ url_for('static' , filename='images/kadambnonveg.pdf') }}">Kadamb Mess Non-Veg Menu</a></li>
+  <li><a href="{{ url_for('static' , filename='images/yuktahar.pdf') }}">Yuktahar Mess Menu</a></li>
+</ul>
+</div>
+ <li>
+<div class="humberger__menu__wrapper">
+        <nav class="humberger__menu__nav mobile-menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Lunch Today</a></li>
+                <li><a href="#">Dinner Today</a></li>
+                <li><a href="#">Breakfasr Tomorrow</a></li>
+                <li><a href="mess.iiit.ac.in">Mess Portal</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+</div>
+
+<div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+<header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                        <div class="header__humberger">
+                            <i class="fa fa-bars humberger__open"></i>
+                        </div>
+                    </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="header__logo">
+                        <img src="{{ url_for('static' , filename='images/cover.png') }}"> 
+                    </div>
+                </div>
+            </div>
+        </div>
+</header>
+
+
+
+
+<!-- <h1 style="text-align: center">MESS@IIIT-H</h1>
+ --><section class="hero">
+    <div class="hero__slider owl-carousel">
+        <div class="hero__item">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 p-0">
+                        <div class="hero__inside__item hero__inside__item--wide set-bg">
+                            <img src="{{ url_for('static' , filename='images/mess2.png') }}">
+                            <div class="hero__inside__item__text">
+                                <div class="hero__inside__item--text">
+                                    <h4>South Mess</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6  p-0">
+                        <div class="hero__inside__item hero__inside__item--small set-bg">
+                            <img src="{{ url_for('static' , filename='images/mess6.jpeg') }}">
+                            <div class="hero__inside__item__text">
+                                <div class="hero__inside__item--text">
+                                    <h5>Kadamb Mess</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero__inside__item hero__inside__item--small set-bg">
+                            <img src="{{ url_for('static' , filename='images/mess4.jpg') }}">
+                            <div class="hero__inside__item__text">
+                                <div class="hero__inside__item--text">
+                                    <h5>Yuktahar Mess</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6  p-0">
+                        <div class="hero__inside__item set-bg">
+                            <img src="{{ url_for('static' , filename='images/mess5.jpg') }}">
+                            <div class="hero__inside__item__text">
+                                <div class="hero__inside__item--text">
+                                    <h5>Its Pizza Time....</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero__item">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 p-0">
+                        <div class="hero__inside__item hero__inside__item--wide set-bg">
+                            <img src="{{ url_for('static' , filename='images/mess7.jpg') }}">
+                            <div class="hero__inside__item__text">
+                                <div class="hero__inside__item--text">
+                                    <h4>Its Breakfast time at Kadamb</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 p-0">
+                        <div class="hero__inside__item hero__inside__item--small set-bg">
+                            <img src="{{ url_for('static' , filename='images/mess1.jpeg') }}">
+                            <div class="hero__inside__item__text">
+                                <div class="hero__inside__item--text">
+                                    <h5>Its Wednesday and You gotta run fast coz its BIRYANI</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero__inside__item hero__inside__item--small set-bg">
+                            <img src="{{ url_for('static' , filename='images/mess3.jpg') }}">
+                            <div class="hero__inside__item__text">
+                                <div class="hero__inside__item--text">
+                                    <h5>Yuktahar</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 p-0">
+                        <div class="hero__inside__item set-bg">
+                            <img src="{{ url_for('static' , filename='images/mess2.png') }}">
+                            <div class="hero__inside__item__text">
+                                <div class="hero__inside__item--text">
+                                    <h5>South ka Chowmein..... Can't miss that</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="categories spad">
+    <div class="container">
+        <h2 style="text-align: left">Today's Recommended:</h2><br>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="categories__item set-bg">
+                    <img src="{{ url_for('static' , filename='images/categories/cat-1.jpg') }}">
+                    <div class="categories__hover__text">
+                        <h5>Breakfast = {{ breakfast_val }}</h5>
+                        <p>@ {{ breakfast_mess}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="categories__item set-bg">
+                    <img src="{{ url_for('static' , filename='images/categories/cat-2.jpg') }}">
+                    <div class="categories__hover__text">
+                        <h5>Lunch = {{ lunch_val }}</h5>
+                        <p>@ {{ lunch_mess}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="categories__item set-bg">
+                    <img src="{{ url_for('static' , filename='images/categories/cat-3.jpg') }}">
+                    <div class="categories__hover__text">
+                        <h5>Dinner = {{ dinner_val}}</h5>
+                        <p>@ {{ dinner_mess }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</section>
+    <br>
+    <br>
+    <!-- SEARCH BOX HERE -->
+
+<div class="content" style="padding-left: 20%;">
+    <table>
+        <tr>
+            <!-- <th>Date Added</th> -->
+            <th style="text-align:center">&nbsp;&nbsp;&nbsp; Mess &nbsp;&nbsp;&nbsp;</th>
+            <th style="text-align:center">&nbsp;&nbsp;&nbsp; Food &nbsp;&nbsp;&nbsp;</th>
+            <th style="text-align:center">&nbsp;&nbsp;&nbsp; Rating &nbsp;&nbsp;&nbsp;</th>
+            <th style="text-align:center">&nbsp;&nbsp;&nbsp; Ratings till now &nbsp;&nbsp;&nbsp;</th>
+        </tr>
+        {% for task in tasks%}
+        <tr>
+            <!-- <td>{{ task.date_created.date() }}</td> -->
+            <td style="text-align:center">{{ task.messname }}</td>
+            <td style="text-align:center">{{ task.content }}</td>
+            
+            <td style="text-align:center">
+                {{ task.rating }}
+            </td>
+            <td style="text-align:center">
+                {{ task.num_of_rating }} &nbsp;&nbsp;
+                <a href="/update/{{task.id}}">Rate</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <br>
+
+
+
+<div class="inputdetails">
+    <h2>Add your food item</h2>
+    <br><br>
+    <form action="/home" method="POST">
+        <label for="content">Food item:</label>
+        <br>
+        <input type="text" name="content" id="content">
+        <br>
+        <br>
+        <p>MESS:</p>
+        <input type="radio" name="messname" id="messname" value="North">
+        <label for="North">North</label><br>
+        <input type="radio" name="messname" id="messname" value="South">
+        <label for="North">Sorth</label><br>
+        <input type="radio" name="messname" id="messname" value="Kadamb">
+        <label for="North">Kadamb</label><br>
+        <input type="radio" name="messname" id="messname" value="Yuktahar">
+        <label for="North">Yuktahar</label>
+        <br>
+        <br>
+        <label for="rating">Rating: </label>
+        <br>
+        <input type="number" name="rating" id="rating" min="1" max="5">
+        <br>
+        <br>
+        <input type="submit" value="Add Food">
+    </form>
+</div>
+<br><br><br>
+<script src="{{ url_for('static' , filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('static' , filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static' , filename='js/jquery.slicknav.js') }}"></script>
+    <script src="{{ url_for('static' , filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static' , filename='js/main.js') }}"></script>
+</div>
+
+{% endblock %}

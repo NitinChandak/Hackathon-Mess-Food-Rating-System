@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Project 1</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- fontawesome -->
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename ='css/bootstrap/bootstrap.min.css')}}"
+    crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="{{ url_for('static', filename ='css/main.css')}}" crossorigin="anonymous" />
+  <!-- {%block style %} {% endblock %} -->
+  <link rel="stylesheet" href="{{ url_for('static', filename ='css/login.css')}}" />
+
+  <style></style>
+</head>
+
+<body>
+  <div id="wrappera">
+    <div id="overlay">
+      <!-- main menu -->
+      <nav class="navbar main-menu navbar-expand-sm navbar-light">
+        <a class="navbar-brand" href="{{url_for('index')}}">
+          <img src="{{ url_for('static', filename = 'img/logo.png')}}" alt="Logo" />
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#mainMenu"
+          aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainMenu">
+          <ul class="navbar-nav mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btns actived" href="{{ url_for('signout')}}">Sign Out</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container justify-content-center" style="align-items: center;">
+        <div style="text-align: center;">
+          <h1>Sign-In Page</h1>
+        </div>
+        <div class="col-sm-12 col-md-6 form-column " style="align-items: center;">
+          <div class="card form mt-4">
+            <article class="card-body">
+              <p class="sign-up btns float-right btn btn-lg" onclick="showSignUpForm()">
+                Sign up
+              </p>
+              <p class="btns sign-in card-title mb-4 mt-1 btn btn-lg actived" onclick="showSignInForm()">
+                Sign in
+              </p>
+              {% with messages = get_flashed_messages() %}
+              {% if messages %}
+              {% for i in messages %}
+              <div class="alert alert-success" role="alert">
+                <strong>
+                  {{i}}
+                </strong>
+              </div>
+              {% endfor %} {%endif%} {%endwith%}
+
+              <!-- sign in form start  -->
+              <div class="form-container">
+                <form id="signinForm" class="signin-form " action="/signin_validation" method="POST">
+                  <div class="form-group">
+                    <label>Your email</label>
+                    <input name="email" class="form-control" placeholder="abc@fgh.com" type="email"
+                      value="{{ email if email }}" required />
+                  </div>
+                  <!-- form-group// -->
+
+                  <div class="form-group">
+                    <a class="float-right" href="#">Forgot?</a>
+                    <label>Your password</label>
+                    <input name="Password" class="form-control" placeholder="******" type="password" required />
+                  </div>
+                  <!-- form-group// -->
+
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label> <input type="checkbox" /> Save password </label>
+                    </div>
+                    <!-- checkbox .// -->
+                  </div>
+                  <!-- form-group// -->
+
+                  <div class="form-group">
+                    <button type="submit" class="login-btn btn btn-block">
+                      Sign in
+                    </button>
+                  </div>
+                  <!-- form-group// -->
+                </form>
+                <!-- === sign in form finish  ===  -->
+
+                <!-- === register form start ===== -->
+                <form id="signupForm" class="signup-form hide" method="POST" action="/register" style="display: none;">
+
+                  <div class="form-group">
+                    <label>Your email</label>
+                    <input name="email" class="form-control signup-email" placeholder="example@abc.com" type="email"
+                      required />
+                  </div>
+                  <!-- form-group// -->
+                  <div class="form-group">
+                    <label>Your password</label>
+                    <input name="Password" id="signup-password" class="form-control signup-password"
+                      placeholder="******" type="password" required onkeyup="check();" />
+                  </div>
+                  <div class="form-group">
+                    <label>Confirm password</label>
+                    <span class="badge confirm-pass-message"> ... </span>
+                    <input id="confirm-password" class="form-control confirm-password" placeholder="******"
+                      type="password" onkeyup="check();" />
+                  </div>
+                  <!-- form-group// -->
+
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" required /> By creating an account, you
+                        agree to the
+                        <a href="http://#">Free Membership Agreement</a> and
+                        <a href="http://#"> Privacy Policy </a>
+                      </label>
+                    </div>
+                    <!-- checkbox .// -->
+                  </div>
+
+                  <div class="form-group">
+                    <button type="submit" id="signupSubmit" class="login-btn btn btn-block">
+                      Sign up
+                    </button>
+                  </div>
+                  <!-- form-group// -->
+                </form>
+                <script>
+                  function showSignInForm() {
+                    document.getElementById("signupForm").style.display = "none";
+                    document.getElementById("signinForm").style.display = "block";
+                  }
+                  function showSignUpForm() {
+                    document.getElementById("signupForm").style.display = "block";
+                    document.getElementById("signinForm").style.display = "none";
+                  }
+                </script>
+              </div>
+            </article>
+          </div>
+          <!-- card.// -->
+        </div>
+        <!-- col // -->
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  <script src="{{ url_for('static', filename = 'js/jquery.js')}}" crossorigin="anonymous"></script>
+
+  <script src="{{ url_for('static', filename = 'js/popper.js')}}"></script>
+
+  <script src="{{ url_for('static', filename = 'js/bootstrap.min.js')}}"></script>
+  <script src="{{ url_for('static', filename = 'js/main.js')}}"></script>
+  <!-- {%block script %} {%endblock%} -->
+  <script src="{{url_for('static', filename ='js/login.js')}}"></script>
+
+
+</body>
+
+</html>
