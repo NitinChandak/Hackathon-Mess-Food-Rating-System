@@ -1,0 +1,32 @@
+.navbar224 ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fcf1de;
+/*  position: fixed;
+*/  top: 0;
+  width: 100%;
+  z-index: -50px;
+}
+
+.navbar224 li {
+  float: left;
+}
+
+.navbar224 li a {
+/*  font-family: "Nunito Sans", sans-serif;
+*/  display: block;
+  color: black;
+  text-align: center;
+  padding: 15px 40px;
+  text-decoration: none;
+}
+
+.navbar224 li a:hover:not(.active) {
+  background-color: orange;
+}
+
+.navbar224 .active {
+  background-color: yellow;
+}
